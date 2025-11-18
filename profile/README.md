@@ -55,4 +55,4 @@ app<App>:
 
 **[Versions]**
 
-- [v0.1.0 (latest)](https://github.com/wafl-lang/wafl-website/tree/v0.1.0)
+- [v0.1.0 (latest)](../docs/v0.1.0)
