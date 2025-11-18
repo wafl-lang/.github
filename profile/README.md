@@ -2,7 +2,7 @@
 
 <img src="wafl-card.png" />
 
-Latest version: `v0.1.0`
+![GitHub Tag](https://img.shields.io/github/v/tag/wafl-lang/wafl?label=Latest%20version) ![GitHub License](https://img.shields.io/github/license/wafl-lang/wafl?label=License)
 
 ## What is WAFL?
 
