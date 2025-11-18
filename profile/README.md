@@ -1,5 +1,7 @@
 # WAFL Documentation
 
+<img src="wafl-card.png" />
+
 Latest version: `v0.1.0`
 
 ## What is WAFL?
