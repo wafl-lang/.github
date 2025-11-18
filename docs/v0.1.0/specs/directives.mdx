@@ -1,0 +1,49 @@
+---
+title: 'Directives'
+description: 'Imports, schemas, and evaluation directives that influence how a WAFL file is processed.'
+---
+
+# Directives
+
+Directives live at the top level and start with `@`. They shape how multiple files are combined and how data is validated.
+
+| Directive | Purpose | Accepted values |
+| --------- | ------- | --------------- |
+| `@import` | Include and merge other WAFL files before applying the current one. | String path or array of string paths. |
+| `@schema` | Declare reusable types for validation. | Object whose keys are type names. |
+| `@eval` | Reserved for future evaluation hooks; currently stored as metadata only. | Any value; currently unused. |
+
+## @import
+
+- Include other WAFL files before applying the current file.
+- Accepts a string or an array:
+
+```wafl
+@import: schema.wafl
+# or
+@import:
+  - base.wafl
+  - env/dev.wafl
+```
+
+- Imported documents are deep-merged. Later files override earlier ones; the current file overrides everything imported.
+
+## @schema
+
+- Declares reusable types for validation.
+
+```wafl
+@schema:
+  App:
+    name: string
+    version: string
+    port: int
+    debug?: bool
+    features: list<string>
+```
+
+- Combine with type-annotated keys (e.g., `app<App>:`) so values can be checked against the matching schema entry.
+
+## @eval
+
+- Reserved for future evaluation hooks. It is parsed and stored as metadata but not executed by the language runtime today

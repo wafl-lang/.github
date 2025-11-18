@@ -1,0 +1,22 @@
+---
+title: 'Collections'
+description: 'Objects and lists, including conditional list items.'
+---
+
+# Collections
+
+## Objects
+
+| Rule | Example |
+| ---- | ------- |
+| Indent child keys under a parent. | `theme:`<br />&nbsp;&nbsp;`primary: "#fff"`<br />&nbsp;&nbsp;`secondary: "#111"` |
+| Objects can be nested freely (type annotations still apply). | `app<App>:` nests regular keys below it. |
+
+## Lists
+
+| Rule | Example |
+| ---- | ------- |
+| Start each item with `-`. | `features:`<br />&nbsp;&nbsp;`- login`<br />&nbsp;&nbsp;`- analytics` |
+| Gate an item with `if`. | `features:`<br />&nbsp;&nbsp;`- login`<br />&nbsp;&nbsp;`- if $ENV.NODE_ENV === "dev": monitoring` |
+
+Only truthy conditions are kept in the final data; falsy items are removed.

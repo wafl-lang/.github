@@ -1,0 +1,41 @@
+---
+title: 'Document structure'
+description: 'Headers, directives, indentation, and keys in a WAFL document.'
+---
+
+# Document structure
+
+## Header
+
+- Optional first line: `%WAFL 0.x`. If present, it must match the `0.x` pattern. Files without the header are still valid.
+
+## Directives
+
+Directives live at the top level and start with `@`.
+
+| Directive | Purpose |
+| --------- | ------- |
+| `@import` | Include and merge other WAFL files before applying the current one. |
+| `@schema` | Declare reusable type definitions (see Validation). |
+| `@eval` | Reserved for future evaluation hooks; currently carried as metadata. |
+
+## Sections and keys
+
+- A section (object) ends with `:`:
+
+```wafl
+app:
+  name: "WAFL Demo"
+```
+
+- Keys can carry a type annotation in angle brackets: `app<App>:`. The `<App>` suffix is stripped in the resolved data but kept for validation metadata.
+
+## Indentation
+
+- Indentation defines nesting. Decreasing indentation closes the current block.
+- Tabs and spaces are both supported; be consistent within a file.
+
+## Comments & blank lines
+
+- Lines starting with `#` are ignored.
+- Blank lines are allowed anywhere and do not affect structure.

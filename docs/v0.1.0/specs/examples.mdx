@@ -1,0 +1,60 @@
+---
+title: 'Complete example'
+description: 'A full WAFL document demonstrating structure, expressions, tags, imports, and validation.'
+---
+
+# Complete example
+
+`app.config.wafl`:
+
+```wafl
+%WAFL 0.1
+
+@import: schema.wafl
+
+app<App>:
+  name: "WAFL Demo"
+  version: "1.0.0"
+  port = $ENV.PORT || 3000
+  debug = $ENV.NODE_ENV === "dev"
+  theme:
+    primary = !rgb(255, 200, 80)
+    secondary: "#111"
+  features:
+    - login
+    - analytics
+    - if $ENV.NODE_ENV === "dev": monitoring
+```
+
+`schema.wafl`:
+
+```wafl
+@schema:
+  App:
+    name: string
+    version: string
+    port: int
+    debug?: bool
+    theme:
+      primary: string
+      secondary: string
+    features: list<string>
+```
+
+With `NODE_ENV=dev` and no `PORT` provided, the resolved data is:
+
+```json
+{
+  "app": {
+    "name": "WAFL Demo",
+    "version": "1.0.0",
+    "port": 3000,
+    "debug": true,
+    "theme": {
+      "primary": "rgb(255, 200, 80)",
+      "secondary": "#111"
+    },
+    "features": ["login", "analytics", "monitoring"]
+  }
+}
+```

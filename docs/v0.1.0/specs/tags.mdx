@@ -1,0 +1,27 @@
+---
+title: 'Tags'
+description: 'Special values prefixed with ! that are resolved by the WAFL tag registry.'
+---
+
+# Tags
+
+Tags generate values during evaluation. They are written as `!tagName(args…)`.
+
+## Built-in tags
+
+| Tag             | Description                                                                                   | Example result            |
+| --------------- | --------------------------------------------------------------------------------------------- | ------------------------- |
+| `!rgb(r, g, b)` | Validates three numeric parts and returns a CSS `rgb()` string.                               | `rgb(255, 200, 80)`       |
+| `!file(path)`   | Reads the file at `path` (relative to the current file’s directory) and returns its contents. | contents of `palette.txt` |
+
+## Usage
+
+## Usage
+
+```wafl
+theme:
+  primary = !rgb(255, 200, 80)
+  palette = !file(colors/palette.txt)
+```
+
+If a tag name is unknown, loading fails with an error. Treat tags as an extension point for project-specific helpers; new tags can be registered in the runtime.

@@ -1,0 +1,32 @@
+---
+title: 'Expressions'
+description: 'Evaluated values with access to environment variables.'
+---
+
+# Expressions
+
+Use `=` to mark a value that must be evaluated.
+
+```wafl
+port = $ENV.PORT || 3000
+debug = $ENV.NODE_ENV === "dev"
+```
+
+## Environment variables
+
+- `$ENV.KEY` substitutes environment values provided at load time.
+- A shorthand fallback is supported: `$ENV.KEY || default`.
+- Missing variables are treated as `null`.
+
+## Operators
+
+| Operators | Purpose |
+| --------- | ------- |
+| `==`, `!=`, `===`, `!==` | Equality and inequality (`===`/`!==` normalize to `==`/`!=`). |
+| `&&`, `||` | Logical AND/OR (`&&` is treated as `and`). |
+| `+`, `-`, `*`, `/`, `%` | Arithmetic. |
+
+## Evaluation rules
+
+- Expressions are parsed as strings, then evaluated with the provided environment map.
+- Failures log a warning and return the unevaluated string to keep issues visible.

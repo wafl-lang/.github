@@ -1,0 +1,18 @@
+---
+title: 'Values'
+description: 'Scalars, strings, numbers, booleans, and how values are written in WAFL.'
+---
+
+# Values
+
+WAFL supports simple scalar types plus tagged values that generate content at load time.
+
+## Value forms
+
+| Type | How to write | Example |
+| ---- | ------------ | ------- |
+| String | Bare or quoted strings. | `env: dev`, `"WAFL Demo"` |
+| Number | Integers or floats. | `port: 3000`, `ratio: 0.5` |
+| Boolean | `true` or `false`. | `debug: false` |
+| Null | Omit a value after the colon (use sparingly). | `optional:` |
+| Tagged value | Prefix with `!` to invoke a tag (see Tags). | `primary = !rgb(255, 200, 80)` |

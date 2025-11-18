@@ -1,0 +1,36 @@
+---
+title: 'Validation'
+description: 'How schemas and type annotations ensure WAFL documents are well-formed.'
+---
+
+# Validation
+
+WAFL can validate documents against schemas to catch missing fields or type mismatches.
+
+## Declaring schemas
+
+- Place a `@schema` block in the same file or an imported file.
+- Each key inside `@schema` is a type definition (see Directives for syntax).
+
+## Attaching types
+
+- Annotate section keys with `<Type>`:
+
+```wafl
+@import: schema.wafl
+app<App>:
+  name: "WAFL Demo"
+  port = $ENV.PORT || 3000
+```
+
+- The `<App>` suffix is stored as metadata and removed from the final data. It links the section to the `App` schema entry.
+
+## What is checked
+
+| Check | Behavior |
+| ----- | -------- |
+| Required fields | Must exist and match their declared type. |
+| Optional fields | Keys with `?` may be absent; if present, they must match the type. |
+| Lists | Each element is validated according to `list<T>`. |
+| Nested objects | Validation recurses through nested objects. |
+| Timing | Runs after expressions, tags, and conditionals resolve so the final data shape is checked. |

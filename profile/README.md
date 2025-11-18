@@ -37,17 +37,20 @@ app<App>:
 ## Table of contents
 
 **[Getting Started]**
-- [Introduction](https://github.com/wafl-lang/wafl-website/docs/v0.1.0/getting-started/introduction.mdx) (High-level overview of the WAFL format and concepts)
- 
+
+- [Introduction](../docs/v0.1.0/getting-started/introduction.mdx) (High-level overview of the WAFL format and concepts)
+
 **[Specs]**
-- [Structure](https://github.com/wafl-lang/wafl-website/blob/master/docs/v0.1.0/specs/structure.mdx) (Document scaffolding: headers, directives, indentation, and keys)
-- [Values](https://github.com/wafl-lang/wafl-website/blob/master/docs/v0.1.0/specs/values.mdx) (Supported scalar types and how to write them)
-- [Collections](https://github.com/wafl-lang/wafl-website/blob/master/docs/v0.1.0/specs/collections.mdx) (Objects, lists, and conditional list items)
-- [Expressions](https://github.com/wafl-lang/wafl-website/blob/master/docs/v0.1.0/specs/expressions.mdx) (Evaluated values and environment variable access)
-- [Tags](https://github.com/wafl-lang/wafl-website/blob/master/docs/v0.1.0/specs/tags.mdx) (Tagged values and built-in tag behaviors)
-- [Directives](https://github.com/wafl-lang/wafl-website/blob/master/docs/v0.1.0/specs/directives.mdx) (Imports, schemas, and evaluation directives)
-- [Validation](https://github.com/wafl-lang/wafl-website/blob/master/docs/v0.1.0/specs/validation.mdx) (Type annotations, schemas, and validation rules)
-- [Examples](https://github.com/wafl-lang/wafl-website/blob/master/docs/v0.1.0/specs/examples.mdx) (Complete WAFL file showing structure, tags, imports, and validation together)
+
+- [Structure](../docs/v0.1.0/specs/structure.mdx) (Document scaffolding: headers, directives, indentation, and keys)
+- [Values](../docs/v0.1.0/specs/values.mdx) (Supported scalar types and how to write them)
+- [Collections](../docs/v0.1.0/specs/collections.mdx) (Objects, lists, and conditional list items)
+- [Expressions](../docs/v0.1.0/specs/expressions.mdx) (Evaluated values and environment variable access)
+- [Tags](../docs/v0.1.0/specs/tags.mdx) (Tagged values and built-in tag behaviors)
+- [Directives](../docs/v0.1.0/specs/directives.mdx) (Imports, schemas, and evaluation directives)
+- [Validation](../docs/v0.1.0/specs/validation.mdx) (Type annotations, schemas, and validation rules)
+- [Examples](../docs/v0.1.0/specs/examples.mdx) (Complete WAFL file showing structure, tags, imports, and validation together)
 
 **[Versions]**
+
 - [v0.1.0 (latest)](https://github.com/wafl-lang/wafl-website/tree/v0.1.0)

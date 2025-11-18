@@ -1,0 +1,18 @@
+---
+title: 'Introduction'
+description: 'Specification-style guide to the WAFL configuration format.'
+---
+
+# Introduction
+
+**WAFL (Wider Attribute Formatting Language)** is an indentation-based configuration format with expressions, imports, schemas, and tags. This guide focuses on the document format itself, leaving implementation details to separate developer guides.
+
+| Concept | Details |
+| ------- | ------- |
+| Readable blocks | Sections end with `:`, and indentation defines nesting. |
+| Expressions | `=` marks evaluable code with access to `$ENV`. |
+| Imports & schemas | `@import` composes files; `@schema` declares reusable types. |
+| Tags | `!tag(...)` generates values (e.g., `!rgb(255,200,80)`). |
+| Conditionals | List items can be gated with `- if <expr>: value`. |
+
+Use the sections below to learn each part of the language.
